@@ -14,6 +14,7 @@ import org.rythmengine.extension.ICodeType;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ public class GithubIssue321Test extends TestBase {
       // debug = true;
       // http://rythmengine.org/doc/template_guide.md#invoke_template
       // first create some arbitrary temporary file
-      File tmpFile = File.createTempFile("Home", "Template");
+      File tmpFile = Files.createTempFile("Home", "Template").toFile();
       // now get the parent directory of it and create a subdirectory for it
       // - this shall be our root directory for templates
       File templateDir = new File(tmpFile.getParentFile(), "templates");
